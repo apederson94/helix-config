@@ -1,0 +1,23 @@
+theme = "iroaseta"
+
+[editor]
+bufferline = "multiple"
+
+# Various utils
+[keys.normal.space.space]
+# Git blame for current line
+w = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+# Copy commit sha for commit for current line
+W = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name} | awk '{print $1}' | pbcopy"
+# open todos
+t = ":o /Volumes/code/todo.md"
+
+# Notes stuff
+[keys.normal.space.n]
+# Open today's notes
+t = ":o %sh{date +'/Volumes/code/notes/%%Y-%%m-%%d.md'}"
+# Open yesterday's note
+y = ":o %sh{date -v -1d +'/Volumes/code/notes/%%Y-%%m-%%d.md'}"
+# Open notes folder
+o = ":o /Volumes/code/notes"
+
